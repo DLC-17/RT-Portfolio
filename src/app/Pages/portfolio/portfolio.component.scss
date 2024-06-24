@@ -1,0 +1,37 @@
+.gallery{
+    position: flex;
+}
+.image-container:hover{
+    opacity: 0.5;
+}
+.image-container:hover .image-text {
+    opacity: 4;
+  }
+.image-container {
+    position: relative;
+    display: inline-block;
+    width: 30%;
+  }
+  
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+.image-text {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.7
+    ); /* Adjust background color and opacity */
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 3vh;
+  }
