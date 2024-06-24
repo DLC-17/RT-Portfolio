@@ -1,4 +1,12 @@
-
+img{
+    height: auto; 
+    width: auto; 
+    height: auto; 
+    width: auto; 
+    max-width: 100%; 
+    max-height: 75%;
+    border: 3px solid #050505;
+}
 :host {
     --bright-blue: oklch(51.01% 0.274 263.83);
     --electric-violet: oklch(53.18% 0.28 296.97);
@@ -73,10 +81,15 @@
     width: 100%;
     max-width: 700px;
     margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row; /* Ensure items are placed in a row */
+    gap: 100px; /* Optional: Add some space between the items */
   }
+  
 
   .content h1 {
     margin-top: 1.75rem;
+    position: flex;
   }
 
   .content p {
