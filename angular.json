@@ -28,7 +28,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "assets",
+                "output": "/assets/"
               }
             ],
             "styles": [
@@ -41,6 +42,7 @@
               "entry": "server.ts"
             }
           },
+          
           "configurations": {
             "production": {
               "budgets": [
