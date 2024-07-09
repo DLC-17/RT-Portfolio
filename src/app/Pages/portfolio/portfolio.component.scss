@@ -1,6 +1,9 @@
 .gallery{
     position: flex;
 }
+.gallery{
+  display: flex;
+}
 .gallery-cover{
     max-width: 100%;
     max-height: 100%;
@@ -12,8 +15,6 @@
 .image-container .gallery-cover:hover {
   opacity: 0.5;
 }
-
-  
 .image-container {
     position: relative;
     display: inline-block;
@@ -26,22 +27,4 @@
     display: block;
     width: 100%;
     height: auto;
-  }
-  
-.image-text {
-    position: absolute;
-    top: 5%;
-    
-    left: 41%;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.7
-    ); /* Adjust background color and opacity */
-    color: white;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    font-size: 3vh;
   }
