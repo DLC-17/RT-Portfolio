@@ -1,8 +1,7 @@
 img{
     max-height: 5vh;
 }
-app-footer {
-    
+app-footer {  
     bottom: 0;
     padding: 19px 15px 20px;
     position: absolute;
@@ -25,4 +24,9 @@ app-footer {
             }
         }
     }
+}
+.container-icons{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
 }
