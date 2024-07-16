@@ -1,12 +1,14 @@
 <div class="content">
     <div class="Left-side">
       <h1>Richard Trinh</h1>
-      <p>I'm a Saint Mary's College of California Alumni. 🎉</p>
+      <p>Bay Area event and portrait photographer always looking for gigs—capturing a story in every photo.</p>
       <div class="pill-group">
         <a routerlink="/portfolio"></a>
         @for (item of [
           { title: 'Instagram', link: 'https://www.instagram.com/cyyper/' },
-          { title: 'SMC Article', link: 'https://www.stmarys-ca.edu/news/making-family-history-integral-major-richard-trinh-24-importance-creating-space-classroom-and' },
+          { title: 'SMC Article', link: 'https://www.stmarys-ca.edu/news/making-family-history-integral-major-richard-trinh-24-importance-creating-space-classroom-and' },{
+            title: 'Linkedin', link:'https://www.linkedin.com/in/richard-trinh-765595227/'
+          }
         ]; track item.title) {
           <a
             class="pill"
