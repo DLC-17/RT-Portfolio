@@ -1,45 +1,19 @@
-img{
-    height: auto; 
-    width: auto; 
-    height: auto; 
-    width: auto; 
-    max-width: 60%; 
-    max-height: 75%;
-    border: 3px solid #050505;
+body {
+    margin: 0; /* Remove default margin */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh; /* Ensure body takes full viewport height */
 }
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
 
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-  .container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    height: 80vh;          /* Full height of the viewport for demonstration purposes */
-    background-color: lightgray; /* For visualization, remove if not needed */
-  }
-  
-  .centered-div {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;    /* Center vertically */
-    width: 100%;            /* Full width of the container */
-    height: 100%;           /* Full height of the container */
-    background-color: lightgray; /* For visualization, remove if not needed */
-  }
-  
-  .centered-div img {
-    max-width: 100%;        /* Responsive image */
-    max-height: 99%;       /* Ensure it doesn't overflow */
-  }
-  
-  
+p {
+    font-size: 13vw;
+    line-height: 20vh; /* Adjust line height based on viewport height */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center text inside the paragraph */
+    background: linear-gradient(to bottom, #ffffff, #000000); /* Vertical gradient */
+    -webkit-background-clip: text; /* WebKit browsers */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* WebKit browsers */
+    color: transparent; /* Standard property */
+}

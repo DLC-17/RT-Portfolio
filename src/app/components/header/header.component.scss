@@ -1,11 +1,16 @@
 /* Style the header with a grey background and some padding */
+@font-face { font-family: Inspiration; src: url('/assets/font/Inspiration-Regular.ttf'); } 
+@font-face { font-family: Inter; src: url('/assets/font/Inter-VariableFont_slnt\,wght.ttf'); } 
+
 header {
-    overflow: hidden;
-    width: 100%;
-    padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between; /* Distribute space between items */
+  align-items: center; /* Center items vertically */
+  width: 90%; /* Ensure the header takes up the full width */
+  padding: 0 2vh; /* Optional: Add padding to the left and right */
   }
   a {
-    margin-right: 10px; /* Adds 10 pixels of space to the right of each link */
+    padding-right: 9vh;
     text-decoration: none;
     color: black;
   }
@@ -13,24 +18,17 @@ header {
     color: #2f5c32;
     /*background-color: rgb(75, 75, 75); Come back to this latter is so desired*/
   }
-  
-  .header-left{
-    position: relative;
-    float: left;
-    font-size: 5vh;
-  }
-  .header-right{
-   position: inherit;
-    float: right;
-    font-size: 3.5vh;
-  }
-  .header a:hover {
-    background-color: #39523c;
-    color: black;
-  }
-  /* Style the active/current link*/
-  .header a.active {
-    background-color: rgb(0, 136, 7);
-    color: white;
-  }
-  
+.header-left{
+  display: flex;
+  font-family: inspiration;
+  font-size: 5vh;
+}
+.header-center{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Inter;
+    font-size: 3vh;
+    flex: 1; /* Allow the center section to grow and take up available space */
+    text-align: center; /* Center text horizontally */
+}
