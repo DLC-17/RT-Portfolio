@@ -1,17 +1,37 @@
-<div class="row">
-  <div class="column">
-    <img *ngFor="let img of Array1"
-[src]="img"
-alt="Img" style="width:100%">
-  </div>
-  <div class="column">
-    <img *ngFor="let img of Array2"
-[src]="img"
-alt="Img" style="width:100%">
-  </div>
-  <div class="column">
-    <img *ngFor="let img of Array3"
-[src]="img"
-alt="Img" style="width:100%">
+<!-- Gallery Modal -->
+<div *ngIf="galleryVisible" class="modal">
+  <span class="close" (click)="closeGallery()">&times;</span>
+  <img  [src]="currentImage" class="modal-content">
+  <div class="caption">{{currentImageIndex + 1}} / {{currentArray.length}}</div>
+  
+  <!-- Next/Previous controls -->
+  <div class="GalleryNavigation">
+  <a class="prev" (click)="prevImage()">&#10094;</a>
+  <a class="next" (click)="nextImage()">&#10095;</a>
   </div>
 </div>
+<div class="row">
+  <div class="column">
+    <img *ngFor="let img of Array1; let i = index"
+         [src]="img"
+         alt="Img"
+         style="width:100%"
+         (click)="openGallery(Array1, i)">
+  </div>
+  <div class="column">
+    <img *ngFor="let img of Array2; let i = index"
+         [src]="img"
+         alt="Img"
+         style="width:100%"
+         (click)="openGallery(Array2, i)">
+  </div>
+  <div class="column">
+    <img *ngFor="let img of Array3; let i = index"
+         [src]="img"
+         alt="Img"
+         style="width:100%"
+         (click)="openGallery(Array3, i)">
+  </div>
+</div>
+
+

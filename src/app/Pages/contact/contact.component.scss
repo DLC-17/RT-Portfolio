@@ -1,185 +1,220 @@
-img{
-  display: flex;
-    height: auto; 
-    width: auto; 
-    height: auto; 
-    width: auto; 
-    max-height: 60%;
-    border: 3px solid #050505;
+/* Image Styling */
+img {
+  display: block;
+  max-height: 80vh;
+  max-width: 100%;
+  border: 3px solid #050505;
+  object-fit: contain;
+  margin: 0 auto; /* Center the image */
 }
+
+/* Host Variables */
 :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
 
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
 
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
+  --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    180deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+}
 
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
+/* Heading Styling */
+h1 {
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
 
-    --pill-accent: var(--bright-blue);
+/* Main Content Styling */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+}
 
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+/* Content Container */
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-height: 700px;
+  flex-direction: row; /* Ensure items are placed in a row */
+  gap: 2rem; /* Add space between content sections */
+}
 
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .logo {
-    max-width: 9.2rem;
-  }
-
+/* Responsive Layout for Smaller Screens */
+@media screen and (max-width: 768px) {
   .content {
-    display: flex;
-    justify-content: space-around;
-    max-height: 700px auto;
-    display: flex;
-    flex-direction: row; /* Ensure items are placed in a row */
-    
-  }
-  
-
-  .content h1 {
-    margin-top: 1.75rem;
-    position: flex;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    gap: 1rem;
   }
 
   .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap; /* Ensure pills are in a single line */
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .Left-side {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .Right-side img {
+    max-width: 80%;
+    margin: 0 auto; /* Center the image */
+  }
+
+  h1 {
+    text-align: center; /* Center align the heading */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Left-side h1 {
+    font-size: 5vh;
+  }
+
+  .Left-side p {
+    font-size: 3vh;
+  }
+
+  .Right-side img {
+    max-width: 100%;
+  }
+
+  .pill-group {
+    gap: 5px;
   }
 
   .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 1.8vh;
   }
 
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+  .pill svg {
+    height: 12px;
+    width: 12px;
   }
+}
 
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3){
-    --pill-accent: var(--orange-red);
-  }
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
+/* Pill Group Styling */
+.pill-group {
+  display: flex;
+  
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
 
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
+/* Pill Styling */
+.pill {
+  display: flex;
+  align-items: center;
+  --pill-accent: var(--bright-blue);
+  background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
+  color: var(--pill-accent);
+  padding-inline: 0.75rem;
+  padding-block: 0.375rem;
+  border-radius: 2.75rem;
+  border: 0;
+  transition: background 0.3s ease;
+  font-family: var(--inter-font);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  letter-spacing: -0.00875rem;
+  text-decoration: none;
+}
 
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
+.pill:hover {
+  background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
+}
 
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
+/* Alternating Pill Colors */
+.pill-group .pill:nth-child(6n + 1) {
+  --pill-accent: var(--bright-blue);
+}
 
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
+.pill-group .pill:nth-child(6n + 2) {
+  --pill-accent: var(--french-violet);
+}
 
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
+.pill-group .pill:nth-child(6n + 3) {
+  --pill-accent: var(--orange-red);
+}
 
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-footer{
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
+.pill-group .pill:nth-child(6n + 4),
+.pill-group .pill:nth-child(6n + 5) {
+  --pill-accent: var(--hot-red);
+}
+
+/* Base styles for the content */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Styles for the left and right sides */
+
+.Right-side {
+  flex: 1;
+  text-align: center;
+}
+
+/* Image styles */
+.Right-side img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Styles for the h1 and p in the Left-side */
+.Left-side h1 {
+  font-size: 3vh;
+  margin-bottom: 10px;
+}
+
+.Left-side p {
+  font-size: 2vh;
+  margin-bottom: 20px;
+}
+
+.pill svg {
+  margin-left: 8px;
 }
