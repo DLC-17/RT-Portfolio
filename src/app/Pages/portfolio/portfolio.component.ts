@@ -14,12 +14,12 @@ export class PortfolioComponent {
     this.titleserveice.setTitle('Trinh-Portfolio')
   }
   Array1: string[] = [
-    '',
-    '/assets/images/AJ.jpg'
+    '/assets/images/Graduation-Photos/Rigo/Rigo_Senior_Photos-05.22.24-Richard_Trinh-0906.jpg',
+    '/assets/images/Graduation-Photos/AJ/AJ.jpg'
   ];
 
   Array2: string[] = [
-    '/assets/images/MoA/GroupShot.jpg','/assets/images/2. Rigo Grad Photo/Rigo_Senior_Photos-05.22.24-Richard_Trinh-0906.jpg'
+    '/assets/images/MoA/GroupShot.jpg','/assets/images/Film Festival/BASS_Student_Film_Festival-04.13.24-Richard_Trinh-5331.jpg'
   ];
 
-  Array3: string[] = ['/assets/images/2. Rigo Grad Photo/Rigo_Senior_Photos-05.22.24-Richard_Trinh-0906.jpg']; }
+  Array3: string[] = ['/assets/images/Saddle-Up-Soiree/Saddle_Up_Soiree-05.03.24-Richard_Trinh-8020.jpg','/assets/images/SMC-Sports/MBB_v_Gonzaga-03.02.24-Richard_Trinh-1247.jpg']; }
