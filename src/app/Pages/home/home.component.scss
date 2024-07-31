@@ -3,12 +3,12 @@ body {
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: flex-start; /* Align items to the top */
-    height: 100vh; /* Ensure body takes full viewport height */
+    height: 90vh; /* Ensure body takes full viewport height */
 }
 
 p {
     font-size: 13vw;
-    line-height: 20vh; /* Adjust line height based on viewport height */
+    line-height: 10vw; /* Adjust line height based on viewport height */
     margin: 0; /* Remove default margin */
     text-align: center; /* Center text inside the paragraph */
     background: linear-gradient(to bottom, #ffffff, #000000); /* Vertical gradient */
@@ -16,4 +16,17 @@ p {
     background-clip: text; /* Standard property */
     -webkit-text-fill-color: transparent; /* WebKit browsers */
     color: transparent; /* Standard property */
+}
+@media (max-width: 600px) {
+    p {
+        font-size: 14vw; /* Adjust font size for smaller screens */
+        line-height: 22vh; /* Adjust line height for smaller screens */
+    }
+}
+@media(min-width: 600px)  {
+    p{
+        font-size:12vw ;
+        line-height:20vh ;
+    }
+    
 }

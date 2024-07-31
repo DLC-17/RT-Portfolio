@@ -1,41 +1,39 @@
-.Gallery{
+.row {
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-
-}
-div.grouping {
-  border: 1px solid #000000;
-  width: 40%;
-  max-width: 450px;
-  margin: 0.5em;
-  }
-
-div.grouping:hover {
-  border: 5px solid #777;
-  opacity: 0.8;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
 }
 
-div.grouping img {
+
+.column {
+  -ms-flex: 25%;
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
   width: 100%;
-  height: auto;
 }
 
-div.desc {
-  padding: 15px;
-  text-align: center;
+
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
 }
 
-* {
-  box-sizing: border-box;
-}
-.responsive {
-  padding: 0 6px;
-  float: left;
-  width: 24.99999%;
-}
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
 }

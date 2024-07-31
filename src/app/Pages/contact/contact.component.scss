@@ -4,8 +4,7 @@ img{
     width: auto; 
     height: auto; 
     width: auto; 
-    max-width: 100% ; 
-    max-height: 75%;
+    max-height: 60%;
     border: 3px solid #050505;
 }
 :host {
@@ -62,8 +61,6 @@ img{
   }
 
   main {
-    width: 100%;
-    min-height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,12 +76,10 @@ img{
   .content {
     display: flex;
     justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
+    max-height: 700px auto;
     display: flex;
     flex-direction: row; /* Ensure items are placed in a row */
-    gap: 100px; /* Optional: Add some space between the items */
+    
   }
   
 
@@ -141,7 +136,9 @@ img{
   .pill-group .pill:nth-child(6n + 2) {
     --pill-accent: var(--french-violet);
   }
-  .pill-group .pill:nth-child(6n + 3),
+  .pill-group .pill:nth-child(6n + 3){
+    --pill-accent: var(--orange-red);
+  }
   .pill-group .pill:nth-child(6n + 4),
   .pill-group .pill:nth-child(6n + 5) {
     --pill-accent: var(--hot-red);
@@ -180,3 +177,9 @@ img{
       margin-block: 1.5rem;
     }
   }
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}

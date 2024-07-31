@@ -1,28 +1,12 @@
-<div class="Gallery">
-    <div class="grouping"> <!-- Convert each grouping into their own dedicated gallery based on the even for each one-->
-          <img src="../../../../assets/images/1. Aj Grad Photos/AJ_Senior_Photos-05.10.24-Richard_Trinh-8598.jpg" alt="Cinque Terre" width="600" height="400">
-        <div class="desc">Add a description of the image here</div>
-      </div>
-      
-      <div class="grouping">
-        
-          <img src="../../.../../../../assets/images/2. Rigo Grad Photo/Rigo_Senior_Photos-05.22.24-Richard_Trinh-0906.jpg"  width="600" height="400">
-        <div class="desc">Add a description of the image here</div>
-      </div>
-      
-      <div class="grouping">
-          <img src="../../.../../../../assets/images/3, Saddle up soiree/Saddle_Up_Soiree-05.03.24-Richard_Trinh-8020.jpg" width="600" height="400">
-        <div class="desc">Add a description of the image here</div>
-      </div>
-      
-      <div class="grouping">
-          <img src="../../.../../../../assets/images/4. SMC Sports event/MBB_v_Gonzaga-03.02.24-Richard_Trinh-1247.jpg"  width="600" height="400">
-        <div class="desc">Add a description of the image here</div>
-      </div>
-</div>
-<div class="Gallery">
-    <div class="grouping">
-          <img src="../../.../../../../assets/images/5. Film Festival/BASS_Student_Film_Festival-04.13.24-Richard_Trinh-5331.jpg" alt="Cinque Terre" width="600" height="400">
-        <div class="desc">Add a description of the image here</div>
-      </div>
+<div class="row">
+  <div class="column">
+    <img *ngFor="let img of Array1"
+[src]="img"
+alt="Img" style="width:100%">
+  </div>
+  <div class="column">
+    <img *ngFor="let img of Array2"
+[src]="img"
+alt="Img" style="width:100%">
+  </div>
 </div>
