@@ -1,10 +1,15 @@
 /* Image Styling */
+.content{max-width: fit-content;}
+.text-content{
+  width: 100%;
+}
 img {
   display: block;
+  float: right;
   max-height: 80vh;
   max-width: 100%;
   border: 3px solid #050505;
-  object-fit: contain;
+ 
   margin: 0 auto; /* Center the image */
 }
 
@@ -35,25 +40,11 @@ img {
   );
 }
 
-/* Heading Styling */
-h1 {
-  font-size: 3.125rem;
-  color: var(--gray-900);
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -0.125rem;
-  margin: 0;
-  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-}
-
 /* Main Content Styling */
 main {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
+
+  width: auto;
   box-sizing: inherit;
   position: relative;
 }
@@ -62,7 +53,7 @@ main {
 .content {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+
   max-height: 700px;
   flex-direction: row; /* Ensure items are placed in a row */
   gap: 2rem; /* Add space between content sections */
@@ -104,10 +95,6 @@ main {
 @media screen and (max-width: 480px) {
   .Left-side h1 {
     font-size: 5vh;
-  }
-
-  .Left-side p {
-    font-size: 3vh;
   }
 
   .Right-side img {
@@ -181,14 +168,6 @@ main {
 }
 
 /* Base styles for the content */
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1200px;
-}
 
 /* Styles for the left and right sides */
 
@@ -206,13 +185,14 @@ main {
 
 /* Styles for the h1 and p in the Left-side */
 .Left-side h1 {
-  font-size: 3vh;
+  font-size: 6vh;
   margin-bottom: 10px;
 }
 
 .Left-side p {
-  font-size: 2vh;
+  font-size: 100%;
   margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 .pill svg {
