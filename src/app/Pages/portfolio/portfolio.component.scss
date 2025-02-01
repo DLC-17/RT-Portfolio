@@ -29,16 +29,20 @@
 .GalleryNavigation {
   display: flex;
   justify-content: space-between;
-  width: 80%; /* Adjust as needed to fit the navigation controls */
-  margin-bottom: 10px; /* Adds space between navigation and image */
-  z-index: 1001; /* Ensures navigation is above the image */
+  align-items: center;
+  width: 100%;
+  max-width: 80vw; /* Adjusts size dynamically */
+  margin-bottom: 10px;
+  z-index: 1001;
 }
 
+/* Navigation Arrows */
 .prev, .next {
   cursor: pointer;
   font-size: 30px;
   color: white;
   text-decoration: none;
+  padding: 10px;
   transition: color 0.3s ease;
 }
 
@@ -49,12 +53,10 @@
 /* Modal Content (the image) */
 .modal-content {
   max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
+  max-height: 80vh;
   object-fit: contain;
   transition: transform 0.3s ease-in-out;
-  z-index: 1000; /* Ensures the image is below navigation */
+  z-index: 1000;
 }
 
 /* Caption */
@@ -66,36 +68,48 @@
   z-index: 1001;
 }
 
-
-.row {
-  display: flex;
-  flex-wrap: wrap; /* Wrap the columns if they don't fit in a single row */
-  margin: 0 -4px; /* Adjust margin for proper spacing */
-}
-.column {
-  flex: 1 1 32%; /* Allows the column to grow and shrink based on available space */
-  padding: 0 4px;
-  box-sizing: border-box; /* Ensures padding is included in the width */
-}
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
+/* Image Styling */
+img {
+  margin-top: 5px;
   width: 100%;
-  transition: opacity 0.3s ease, border 0.3s ease; /* Smooth hover effect */
+  transition: opacity 0.3s ease, border 0.3s ease;
 }
-.column img:hover {
-  opacity: 0.7;
+img:hover {
   border: 2px solid black;
   cursor: zoom-in;
 }
+
+/* Responsive Gallery Grid */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.photo-item {
+  flex: 1 1 30%; /* Allows images to take up 30% of the row */
+  max-width: 30%;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 600px) {
-  .column {
-    max-width: 100%; /* On small screens, make the columns take up the full width */
-    flex: 1 1 100%; /* Ensures the columns stack vertically */
+  .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo-item {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
+
 @media (min-width: 600px) {
-  .column {
-    max-width: 32%; /* On larger screens, set columns to 32% of the row width */
+  .row {
+    justify-content: space-around;
+  }
+  .photo-item {
+    flex: 1 1 32%;
+    max-width: 32%;
   }
 }
