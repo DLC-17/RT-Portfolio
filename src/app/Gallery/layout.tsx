@@ -1,5 +1,5 @@
 import { House,Images,Mail } from "lucide-react";
-import type { Metadata } from "next";
+import Link from "next/link";
 
 
 const ContentLayout = ({ children }) => {
@@ -11,9 +11,9 @@ const ContentLayout = ({ children }) => {
       Richard Trinh 
     </h2>
     <ul className="flex md:flex-col gap-4 md:gap-2 ml-4 md:ml-0 mt-0 md:mt-4">
-      <li><a href="/" className="hover:underline flex items-center gap-2 py-3"><House /> Home</a></li>
-      <li><a href="/Gallery" className="hover:underline flex items-center gap-2 py-3"><Images /> Gallery</a></li>
-      <li><a href="/Contact" className="hover:underline flex items-center gap-2 py-3"><Mail /> Contact</a></li>
+      <li><Link href="/" className="hover:underline flex items-center gap-2 py-3"><House /> Home</Link></li>
+      <li><Link href="/Gallery" className="hover:underline flex items-center gap-2 py-3"><Images /> Gallery</Link></li>
+      <li><Link href="/Contact" className="hover:underline flex items-center gap-2 py-3"><Mail /> Contact</Link></li>
     </ul>
   </nav>
 

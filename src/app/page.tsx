@@ -1,6 +1,6 @@
 import { ColumnsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/columns.css";
-import React from "react";
+import * as React from "react";
 import { House, Images, Mail } from "lucide-react";
 
 const photos = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentLayout from '../Gallery/layout';
-import { Linkedin, LinkedinIcon, Mail, MailCheck, } from 'lucide-react';
+import {LinkedinIcon, Mail} from 'lucide-react';
 
 const ContactPage = () => {
     return (
@@ -38,7 +38,7 @@ const ContactPage = () => {
       </div>
       <div>
         <p className="text-gray-600 mb-2 text-align-center">
-          If you've got a taste for my work and wanna see more check out some of the other 
+          If you&aposve got a taste for my work and wanna see more check out some of the other 
           work that I have done
         </p>
         <ul className='pr-4 flex flex-wrap gap-2'>
