@@ -1,6 +1,8 @@
 import React from 'react';
 import ContentLayout from '../Gallery/layout';
 import {LinkedinIcon, Mail} from 'lucide-react';
+import Image from "next/image"
+
 
 const ContactPage = () => {
     return (
@@ -9,12 +11,13 @@ const ContactPage = () => {
     
     {/* Left column – Profile image */}
     <div id="left-column" className="flex-shrink-0">
-      <img
-      src="Richie.jpg"
-      alt="Profile"
-      className="w-32 h-32 md:w-48 md:h-48 rounded-full shadow-md object-cover"
-      />
-    </div>
+      <Image
+        src="/Richie.jpg"
+        alt="Profile"
+        width={192} // same as w-48 (12 x 16)
+        height={192} // same as h-48
+        className="w-32 h-32 md:w-48 md:h-48 rounded-full shadow-md object-cover"
+  />    </div>
 
     {/* Right column – Contact Info and Gear */}
     <div id="right-column" className="flex flex-col max-w-xl">

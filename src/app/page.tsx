@@ -2,6 +2,7 @@ import { ColumnsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/columns.css";
 import * as React from "react";
 import { House, Images, Mail } from "lucide-react";
+import Link from "next/link";
 
 const photos = [
   {src:"GroupShot.jpg",width: 1400, height:900},
@@ -34,22 +35,22 @@ export default function Home() {
           <nav>
             <ul className="flex flex-row gap-6 ">
               <li>
-                <a href="/" className="flex items-center gap-2">
+                <Link href="/" className="flex items-center gap-2">
                   <House />
                   <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/Gallery" className="flex items-center gap-2">
+                <Link href="/Gallery" className="flex items-center gap-2">
                   <Images />
                   <span>Gallery</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/Contact" className="flex items-center gap-2">
+                <Link href="/Contact" className="flex items-center gap-2">
                   <Mail />
                   <span>Contact</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </nav>

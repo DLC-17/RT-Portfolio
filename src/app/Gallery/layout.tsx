@@ -2,7 +2,13 @@ import { House,Images,Mail } from "lucide-react";
 import Link from "next/link";
 
 
-const ContentLayout = ({ children }) => {
+import { ReactNode } from "react";
+
+interface ContentLayoutProps {
+  children: ReactNode;
+}
+
+const ContentLayout = ({ children }: ContentLayoutProps) => {
   return (
 <div className="flex w-full">
   {/* Navigation */}
