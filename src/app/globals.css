@@ -1,4 +1,8 @@
 @import "tailwindcss";
 @plugin "daisyui"{
-   themes: coffee --default, dark --prefersdark;
+  themes: cyberpunk,  , Black;
+  themes: coffee --default;
  }
+html {
+  scroll-behavior: smooth;
+}
