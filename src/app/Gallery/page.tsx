@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PhotoAlbum, { Photo } from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -26,23 +26,6 @@ const photos: GalleryPhoto[] = [
 
 export default function GalleryPage() {
   const [index, setIndex] = useState<number>(-1);
-  const [columns, setColumns] = useState(3);
-  const [loadedImages, setLoadedImages] = useState<{ [src: string]: boolean }>({});
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) setColumns(1);
-      else if (window.innerWidth < 1024) setColumns(2);
-      else setColumns(3);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleImageLoad = (src: string) => {
-    setLoadedImages((prev) => ({ ...prev, [src]: true }));
-  };
 
   const handlers = useSwipeable({
     onSwipedLeft: () => setIndex((i) => (i + 1) % photos.length),
@@ -64,38 +47,13 @@ export default function GalleryPage() {
       <PhotoAlbum
         layout="masonry"
         photos={photos}
-        columns={columns}
+        columns={(containerWidth) => {
+          if (containerWidth < 640) return 1;
+          if (containerWidth < 1024) return 2;
+          return 3;
+        }}
         spacing={16}
         onClick={({ index }) => setIndex(index)}
-        renderPhoto={({ photo, wrapperStyle }) => (
-          <motion.div
-            style={wrapperStyle}
-            className="relative rounded overflow-hidden shadow-md cursor-pointer transition-transform duration-200 ease-in-out"
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
-            {!loadedImages[photo.src] && (
-              <div className="absolute inset-0 bg-neutral-800 animate-pulse rounded-md z-10" />
-            )}
-            <Image
-              src={photo.src}
-              alt={photo.alt || "Photo"}
-              width={photo.width}
-              height={photo.height}
-              className={`w-full h-auto object-cover ${!loadedImages[photo.src] ? "invisible" : ""}`}
-              onLoad={() => handleImageLoad(photo.src)}
-              draggable={false}
-              onContextMenu={(e) => e.preventDefault()}
-            />
-            {photo.alt && loadedImages[photo.src] && (
-              <div className="absolute bottom-0 bg-black bg-opacity-50 text-white text-xs p-2 w-full text-center backdrop-blur-sm">
-                {photo.alt}
-              </div>
-            )}
-          </motion.div>
-        )}
       />
 
       <Lightbox
@@ -106,8 +64,8 @@ export default function GalleryPage() {
           src: photo.src,
           width: photo.width,
           height: photo.height,
-          alt: photo.alt,
-          description: photo.alt || "Untitled Photo",
+          alt: photo.alt ?? "Photo",
+          description: photo.alt ?? "Untitled Photo",
         }))}
         plugins={[Captions]}
         captions={{
@@ -125,7 +83,7 @@ export default function GalleryPage() {
             >
               <Image
                 src={slide.src}
-                alt={slide.alt || "Photo"}
+                alt={slide.alt ?? "Photo"}
                 width={slide.width || 800}
                 height={slide.height || 600}
                 style={{
@@ -139,7 +97,6 @@ export default function GalleryPage() {
             </div>
           ),
         }}
-        on={{ view: ({ index }) => setIndex(index) }}
         {...handlers}
       />
     </main>
