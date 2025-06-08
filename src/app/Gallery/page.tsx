@@ -16,12 +16,10 @@ import { motion } from "framer-motion";
 type GalleryPhoto = Photo & { alt?: string };
 
 const photos: GalleryPhoto[] = [
-  { src: "/GroupShot.jpg", width: 1400, height: 900, alt: "Opening day at the MOA" },
-  { src: "/Aj.jpg", width: 1400, height: 900, alt: "Graduation Photo" },
-  { src: "/Rigo.jpg", width: 1400, height: 900, alt: "Graduation photo for a SMC Alumn" },
-  { src: "/MBB_vs_Gonzaga.jpg", width: 1400, height: 900, alt: "Basketball game vs Gonzaga" },
-  { src: "/Saddle_up_soiree.jpg", width: 1400, height: 900, alt: "Saddle Up Soiree event" },
-  { src: "/Bass_Film_Festival.jpg", width: 1400, height: 900, alt: "Bass Film Festival atmosphere" },
+  { src: "/Gallery/Research.jpg", width: 1400, height: 900, alt: "Saint Marys annual research conference" },
+  {src: "/Gallery/B_Grad.jpg", width: 1400, height: 900, alt: "Black Graduation"},
+  { src: "/Saddle_up_soiree.jpg", width: 1400, height: 900 },
+  { src: "/Bass_Film_Festival.jpg", width: 1400, height: 900 },
 ];
 
 export default function GalleryPage() {

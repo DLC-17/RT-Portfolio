@@ -12,12 +12,12 @@ import "react-photo-album/masonry.css";
 import { useSwipeable } from "react-swipeable";
 
 const allPhotos = [
-  { src: "/GroupShot.jpg", width: 1400, height: 900, alt: "Group shot of friends at a party" },
-  { src: "/Aj.jpg", width: 1400, height: 900 },
-  { src: "/Rigo.jpg", width: 1400, height: 900 },
-  { src: "/MBB_vs_Gonzaga.jpg", width: 1400, height: 900 },
-  { src: "/Saddle_up_soiree.jpg", width: 1400, height: 900 },
-  { src: "/Bass_Film_Festival.jpg", width: 1400, height: 900 },
+  { src: "/GroupShot.jpg", width: 1400, height: 900, alt: "Opening day at the MOA" },
+  { src: "/Aj.jpg", width: 1400, height: 900, alt:"Comissioned Graduation Photos" },
+  { src: "/Rigo.jpg", width: 1400, height: 900 , alt: "Graduation photos comissioned by an SMC student"},
+  { src: "/MBB_vs_Gonzaga.jpg", width: 1400, height: 900, alt:"Men's basketball SMC vs Gonzaga" },
+  { src: "/Saddle_up_soiree.jpg", width: 1400, height: 900, alt: "Saddle up Soiree event" },
+  { src: "/Bass_Film_Festival.jpg", width: 1400, height: 900, alt:"BASS film festival" },
 ];
 
 const doubledPhotos = [...allPhotos, ...allPhotos];
