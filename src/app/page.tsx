@@ -13,7 +13,6 @@ import { useSwipeable } from "react-swipeable";
 
 const allPhotos = [
   { src: "/GroupShot.jpg", width: 1400, height: 900, alt: "Opening day at the MOA" },
-  { src: "/Aj.jpg", width: 1400, height: 900, alt:"Comissioned Graduation Photos" },
   { src: "/Rigo.jpg", width: 1400, height: 900 , alt: "Graduation photos comissioned by an SMC student"},
   { src: "/MBB_vs_Gonzaga.jpg", width: 1400, height: 900, alt:"Men's basketball SMC vs Gonzaga" },
   { src: "/Saddle_up_soiree.jpg", width: 1400, height: 900, alt: "Saddle up Soiree event" },
@@ -102,7 +101,7 @@ export default function Home() {
         </motion.div>
 
         <motion.h3 className="text-center mt-4 text-lg max-w-xl" variants={itemVariants}>
-          Bay Area Photographer capturing the beauty of the world one shot at a time.
+          Bay Area based photographer capturing the beauty of the world one shot at a time.
         </motion.h3>
 
         <motion.div className="flex justify-center mt-6" variants={itemVariants}>

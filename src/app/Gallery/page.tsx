@@ -18,8 +18,8 @@ type GalleryPhoto = Photo & { alt?: string };
 const photos: GalleryPhoto[] = [
   { src: "/Gallery/Research.jpg", width: 1400, height: 900, alt: "Saint Marys annual research conference" },
   {src: "/Gallery/B_Grad.jpg", width: 1400, height: 900, alt: "Black Graduation"},
-  { src: "/Saddle_up_soiree.jpg", width: 1400, height: 900 },
-  { src: "/Bass_Film_Festival.jpg", width: 1400, height: 900 },
+  { src: "/Saddle_up_soiree.jpg", width: 1400, height: 900, alt:"Saddle up soiree" },
+  { src: "/Bass_Film_Festival.jpg", width: 1400, height: 900, alt:"Bay area short film festival" },
 ];
 
 export default function GalleryPage() {
