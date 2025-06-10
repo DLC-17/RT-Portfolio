@@ -11,16 +11,47 @@ import Image from "next/image";
 import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/plugins/captions.css";
 import { motion } from "framer-motion";
+import {
+  RenderImageContext,
+  RenderImageProps,
+} from "react-photo-album";
 
 // Define photo type for clarity
 type GalleryPhoto = Photo & { alt?: string };
 
 const photos: GalleryPhoto[] = [
-  { src: "/Gallery/Research.jpg", width: 1400, height: 900, alt: "Saint Marys annual research conference" },
-  {src: "/Gallery/B_Grad.jpg", width: 1400, height: 900, alt: "Black Graduation"},
-  { src: "/Saddle_up_soiree.jpg", width: 1400, height: 900, alt:"Saddle up soiree" },
-  { src: "/Bass_Film_Festival.jpg", width: 1400, height: 900, alt:"Bay area short film festival" },
+  { src: "/Gallery/research.webp", width: 1400, height: 900, alt: "Saint Marys annual research conference" },
+  { src: "/aj.webp", width: 1400, height: 900, alt: "Aj grad photos" },
+  { src: "/Gallery/bgrad.webp", width: 1400, height: 900, alt: "Black Graduation" },
+  { src: "/Gallery/Black_Grad_P-lo.webp", width: 1400, height: 900, alt: "recent graduates" },
+  { src: "/Saddle_up_soiree.webp", width: 1400, height: 900, alt: "Saddle up soiree" },
+  { src: "/Bass_Film_Festival.webp", width: 1400, height: 900, alt: "Bay area short film festival" },
 ];
+
+function renderNextImage(
+  { alt = "", title, sizes }: RenderImageProps,
+  { photo, width, height }: RenderImageContext,
+) {
+  return (
+    <div
+      style={{
+        width: "100%",
+        position: "relative",
+        aspectRatio: `${width} / ${height}`,
+      }}
+    >
+      <Image
+        fill
+        src={photo.src}
+        alt={alt}
+        title={title}
+        sizes={sizes}
+        placeholder={"blurDataURL" in photo ? "blur" : undefined}
+        style={{ objectFit: "cover" }}
+      />
+    </div>
+  );
+}
 
 export default function GalleryPage() {
   const [index, setIndex] = useState<number>(-1);
@@ -32,7 +63,10 @@ export default function GalleryPage() {
   });
 
   return (
-    <main className="min-h-screen text-white p-4" onContextMenu={(e) => e.preventDefault()}>
+    <main
+      className="min-h-screen text-white p-4 w-full max-w-[1600px] mx-auto"
+      onContextMenu={(e) => e.preventDefault()}
+    >
       <motion.h1
         className="text-3xl sm:text-4xl font-bold text-center mb-8 text-primary"
         initial={{ opacity: 0, y: -20 }}
@@ -45,12 +79,14 @@ export default function GalleryPage() {
       <PhotoAlbum
         layout="masonry"
         photos={photos}
+        render={{ image: renderNextImage }}
         columns={(containerWidth) => {
           if (containerWidth < 640) return 1;
           if (containerWidth < 1024) return 2;
+          if (containerWidth < 1440) return 3;
           return 3;
         }}
-        spacing={16}
+        spacing={24} // increased spacing for larger display
         onClick={({ index }) => setIndex(index)}
       />
 
@@ -75,18 +111,13 @@ export default function GalleryPage() {
         controller={{ closeOnBackdropClick: true }}
         render={{
           slide: ({ slide }) => (
-            <div
-              className="max-w-[90vw] max-h-[80vh] flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div onClick={(e) => e.stopPropagation()}>
               <Image
                 src={slide.src}
                 alt={slide.alt ?? "Photo"}
                 width={slide.width || 800}
                 height={slide.height || 600}
                 style={{
-                  maxWidth: "100%",
-                  maxHeight: "100%",
                   objectFit: "contain",
                 }}
                 draggable={false}

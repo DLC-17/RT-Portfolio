@@ -58,7 +58,7 @@ const ContactPage = () => {
             "
           >
             <Image
-              src="/Richie.jpg"
+              src="/Richie.webp"
               alt="Profile"
               fill
               className="rounded-full shadow-md object-cover"
