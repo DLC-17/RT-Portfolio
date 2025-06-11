@@ -31,12 +31,13 @@ A responsive and visually appealing photography portfolio built with React, Type
    ```bash
    git clone https://github.com/DLC-17/react-photography-portfolio.git
    cd react-photography-portfolio
-Install the dependencies:
+2. Install the dependencies:
 
 npm install
-# or
+ or
 yarn install
-Start the development server:
+
+3.Start the development server:
 
 npm start
 # or
@@ -44,6 +45,6 @@ yarn start
 Open http://localhost:3000 in your browser to view the portfolio.
 
 📫 Contact
-Questions or feedback? Reach out at dlc17@stmarys-ca.edu or connect on LinkedIn.
+Questions or feedback? Reach out at dlc17@stmarys-ca.edu or connect on [LinkedIn](https://www.linkedin.com/in/david-coleman17/).
 
 Thanks for checking out my React Photography Portfolio!
