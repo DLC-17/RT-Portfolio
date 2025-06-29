@@ -237,11 +237,10 @@ const ContactPage = () => {
             "
             variants={itemVariants}
           >
-            <li>Canon EOS R6</li>
-            <li>Canon RF 24-105mm f/4L IS USM Lens</li>
-            <li>Canon RF 50mm f/1.2L USM Lens</li>
-            <li>Manfrotto Befree Advanced Tripod</li>
-            <li>Rode VideoMic Pro+ Microphone</li>
+            <li>Canon 6D</li>
+            <li>Sigma 35mmf/1.4 DG HSM  ART</li>
+            <li>Tamron SP 45mm f/1.8 Di VC USD</li>
+            <li>Rokinon 85mm T1.5 Full Frame Cine DS</li>
           </motion.ul>
         </motion.div>
       </motion.div>

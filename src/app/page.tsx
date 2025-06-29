@@ -11,14 +11,70 @@ import "yet-another-react-lightbox/styles.css";
 import "react-photo-album/masonry.css";
 import { useSwipeable } from "react-swipeable";
 
-const allPhotos = [
-  { src: "/GroupShot.webp", width: 1400, height: 900, alt: "Opening day at the MOA" },
-  { src: "/Rigo.webp", width: 1400, height: 900 , alt: "Graduation photos comissioned by an SMC student"},
-  { src: "/MBB_vs_Gonzaga.webp", width: 1400, height: 900, alt:"Men's basketball SMC vs Gonzaga" },
-  { src: "/Saddle_up_soiree.webp", width: 1400, height: 900, alt: "Saddle up Soiree event" },
-  { src: "/Bass_Film_Festival.webp", width: 1400, height: 900, alt:"BASS film festival" },
+// Automated import for all homepage images
+const homepagePhotos = [
+  {
+    src: "/Homepage/aj_grad.webp",
+    width: 1400,
+    height: 900,
+    alt: "A graduation photo of an Art History major from SMC",
+  },
+  {
+    src: "/Homepage/bass_film_festival.webp",
+    width: 1400,
+    height: 900,
+    alt: "Annual Bay Area Student Film Festival",
+  },
+  {
+    src: "/Homepage/David_grad.webp",
+    width: 1400,
+    height: 900,
+    alt: "A graduation taken at Saint Mary's College of California",
+  },
+  {
+    src: "/Homepage/CAB_Carnival.webp",
+    width: 1400,
+    height: 900,
+    alt: "The Annual CAB carnival",
+  },
+  {
+    src: "/Homepage/halley_grad.webp",
+    width: 1400,
+    height: 900,
+    alt: "Comissioned Graduation Picture",
+  },
+  {
+    src: "/Homepage/saddle_up_soiree.webp",
+    width: 1400,
+    height: 900,
+    alt: "Saddle up Soiree event",
+  },
+  {
+    src: "/Homepage/ian_grad.webp",
+    width: 1400,
+    height: 900,
+    alt: "Graduation photos from a recent Berkley graduate",
+  },
+  {src:"/Homepage/olg.webp",
+    width: 1400,
+    height: 900,
+    alt:"The celebration for Our Lady of Guadelupe"
+  },
+  {src:"/Homepage/rigo_grad.webp",
+    width:1400,
+    height:900,
+    alt:"Graduation photo for SMC Alumn"
+  },
+  {
+    src:"/Homepage/mbb_vs_gonzaga.webp",
+    width: 1400,
+    height: 900,
+    alt: "A shot of the fans watching the Saint Mary's College of California men's basketball team"
+
+  }
 ];
 
+const allPhotos = homepagePhotos;
 const doubledPhotos = [...allPhotos, ...allPhotos];
 
 export default function Home() {
@@ -41,12 +97,10 @@ export default function Home() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Dynamically set photoWidth based on window size to match rendered sizes
-  // (These values roughly correspond to min-widths used in the photo container classes)
   const getPhotoWidth = () => {
-    if (windowWidth >= 1024) return 400; // lg and up (desktop)
-    if (windowWidth >= 768) return 320; // md (tablet/laptop)
-    return 260; // sm (mobile)
+    if (windowWidth >= 1024) return 400;
+    if (windowWidth >= 768) return 320;
+    return 260;
   };
 
   useAnimationFrame((t, delta) => {
@@ -143,9 +197,9 @@ export default function Home() {
                   whileHover={{ scale: 1.05, filter: "brightness(1.1)" }}
                   className="
                     relative flex-shrink-0 
-                    min-w-[clamp(250px,20vw,600px)] h-[clamp(180px,15vw,450px)]  /* Default smaller */
-                    md:min-w-[clamp(300px,25vw,700px)] md:h-[clamp(220px,18vw,520px)]  /* Laptop */
-                    lg:min-w-[clamp(350px,30vw,800px)] lg:h-[clamp(250px,20vw,600px)]  /* Desktop */
+                    min-w-[clamp(250px,20vw,600px)] h-[clamp(180px,15vw,450px)]
+                    md:min-w-[clamp(300px,25vw,700px)] md:h-[clamp(220px,18vw,520px)]
+                    lg:min-w-[clamp(350px,30vw,800px)] lg:h-[clamp(250px,20vw,600px)]
                     rounded overflow-hidden shadow-lg cursor-pointer
                   "
                   onClick={() => {
@@ -155,7 +209,7 @@ export default function Home() {
                 >
                   <Image
                     src={photo.src}
-                    alt={photo.alt ?? `Photo ${i + 1}`}
+                    alt={photo.alt}
                     fill
                     className="object-cover"
                     sizes="(min-width: 1800px) 800px, (min-width: 1280px) 30vw, (min-width: 768px) 40vw, 100vw"
@@ -178,7 +232,7 @@ export default function Home() {
                 >
                   <Image
                     src={photo.src}
-                    alt={photo.alt ?? `Photo ${i + 1}`}
+                    alt={photo.alt}
                     fill
                     className="object-cover"
                     sizes="300px"
@@ -197,11 +251,16 @@ export default function Home() {
         open={isLightboxOpen}
         close={() => setIsLightboxOpen(false)}
         index={currentIndex}
-        slides={allPhotos.map((p) => ({ src: p.src, alt: p.alt }))}
+        slides={allPhotos.map((p) => ({
+          src: p.src,
+          alt: p.alt,
+          width: p.width,
+          height: p.height,
+        }))}
         animation={{ fade: 300, swipe: 300 }}
         controller={{ closeOnBackdropClick: true }}
         render={{
-          slide: ({ slide}) => (
+          slide: ({ slide }) => (
             <div className="flex flex-col items-center justify-center w-full h-full">
               <Image
                 width={slide.width || 800}
