@@ -13,26 +13,28 @@ const containerVariants = {
       staggerChildren: 0.15,
     },
   },
-};
+} as const;
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 100, damping: 15 },
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
   },
-};
+} as const;
 
 const ContactPage = () => {
   return (
     <ContentLayout>
       <motion.div
         className="
-          flex flex-col md:flex-row items-center md:items-start justify-center 
+          flex flex-col md:flex-row items-center md:items-start justify-center
           w-full max-w-screen-xl mx-auto px-4 sm:px-8 lg:px-16 py-12 gap-10
-
-          /* Bigger padding and gap on large desktops */
           xl:px-24 xl:py-20 xl:gap-16
           2xl:px-32 2xl:py-24 2xl:gap-20
         "
@@ -51,8 +53,6 @@ const ContactPage = () => {
               relative 
               w-32 h-32 
               md:w-48 md:h-48 
-
-              /* Increase size on xl and 2xl */
               xl:w-60 xl:h-60 
               2xl:w-72 2xl:h-72
             "
@@ -62,7 +62,13 @@ const ContactPage = () => {
               alt="Profile"
               fill
               className="rounded-full shadow-md object-cover"
-              sizes="(max-width: 768px) 128px, 192px"
+              sizes="
+                (max-width: 768px) 128px,
+                (max-width: 1024px) 192px,
+                (max-width: 1280px) 240px,
+                (max-width: 1536px) 288px,
+                288px
+              "
             />
           </div>
         </motion.div>
@@ -72,8 +78,6 @@ const ContactPage = () => {
           id="right-column"
           className="
             flex flex-col max-w-3xl w-full
-
-            /* Max width bigger on xl and 2xl */
             xl:max-w-4xl
             2xl:max-w-5xl
           "
@@ -81,13 +85,9 @@ const ContactPage = () => {
         >
           <motion.h1
             className="
-              text-3xl 
-              lg:text-4xl 
-
-              /* Larger font sizes for desktop */
+              text-3xl lg:text-4xl
               xl:text-5xl
               2xl:text-6xl
-
               font-bold text-primary mb-2 
               text-center md:text-left
             "
@@ -95,15 +95,13 @@ const ContactPage = () => {
           >
             Richard Trinh
           </motion.h1>
+
           <motion.h2
             className="
               text-xl 
-
-              /* Larger font on xl+ */
               xl:text-2xl
               2xl:text-3xl
-
-              text-neutral mb-4 
+              text-neutral-600 mb-4 
               text-center md:text-left
             "
             variants={itemVariants}
@@ -114,22 +112,21 @@ const ContactPage = () => {
           <motion.p
             className="
               text-lg 
-
-              /* Bigger paragraph text on xl+ */
               xl:text-xl
               2xl:text-2xl
-
-              text-neutral mb-6 text-balance 
+              text-neutral-600 mb-6 
               text-center md:text-left
               font-semibold
             "
             variants={itemVariants}
           >
-            Thank you for visiting my photography portfolio! If you have any questions,
-            comments, or would like to collaborate, feel free to reach out via email:
+            Thank you for visiting my photography portfolio! If you have any
+            questions, comments, or would like to collaborate, feel free to
+            reach out via email:
             <a
               href="mailto:rt12@stmarys-ca.edu"
               className="text-blue-600 hover:underline ml-1"
+              rel="noopener noreferrer"
             >
               rt12@stmarys-ca.edu
             </a>
@@ -138,7 +135,6 @@ const ContactPage = () => {
           <motion.div
             className="
               flex items-center justify-center md:justify-start space-x-4 mb-6
-              /* Bigger icons on xl+ */
               xl:space-x-6
             "
             variants={itemVariants}
@@ -150,7 +146,7 @@ const ContactPage = () => {
             >
               <LinkedinIcon className="w-6 h-6 xl:w-8 xl:h-8" />
             </a>
-            <a href="mailto:rt12@stmarys-ca.edu">
+            <a href="mailto:rt12@stmarys-ca.edu" rel="noopener noreferrer">
               <Mail size={28} className="xl:w-8 xl:h-8" color="black" />
             </a>
           </motion.div>
@@ -158,17 +154,17 @@ const ContactPage = () => {
           <motion.div variants={itemVariants}>
             <p
               className="
-                text-neutral mb-2 text-center md:text-left
-
-                /* Larger text on xl+ */
+                text-neutral-600 mb-2 
+                text-center md:text-left
                 xl:text-2xl
                 2xl:text-2xl
                 font-semibold
-
               "
             >
-              If you enjoyed my work and want to see more, feel free to explore some of my other projects:
+              If you enjoyed my work and want to see more, feel free to explore
+              some of my other projects:
             </p>
+
             <div className="flex flex-wrap gap-3 sm:justify-center md:justify-start">
               <a
                 target="_blank"
@@ -178,6 +174,7 @@ const ContactPage = () => {
               >
                 2025 Commencement
               </a>
+
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -186,6 +183,7 @@ const ContactPage = () => {
               >
                 Professor of the Year
               </a>
+
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -194,6 +192,7 @@ const ContactPage = () => {
               >
                 Fall-Preview Day
               </a>
+
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -202,6 +201,7 @@ const ContactPage = () => {
               >
                 Debate and Speech
               </a>
+
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -215,10 +215,7 @@ const ContactPage = () => {
 
           <motion.h2
             className="
-              text-xl 
-              font-semibold  mt-10 mb-4
-
-              /* Bigger heading on xl+ */
+              text-xl font-semibold mt-10 mb-4
               xl:text-2xl
               2xl:text-3xl
             "
@@ -226,19 +223,17 @@ const ContactPage = () => {
           >
             My Camera Gear:
           </motion.h2>
+
           <motion.ul
             className="
               list-disc list-inside text-info space-y-2
-
-              /* Larger list items on xl+ */
               xl:text-lg
               2xl:text-xl
-              
             "
             variants={itemVariants}
           >
             <li>Canon 6D</li>
-            <li>Sigma 35mmf/1.4 DG HSM  ART</li>
+            <li>Sigma 35mm f/1.4 DG HSM Art</li>
             <li>Tamron SP 45mm f/1.8 Di VC USD</li>
             <li>Rokinon 85mm T1.5 Full Frame Cine DS</li>
           </motion.ul>
