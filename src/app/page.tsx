@@ -126,13 +126,27 @@ export default function Home() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { when: "beforeChildren", staggerChildren: 0.2 } },
-  };
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+  } as const;
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.6 } },
-  };
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: "easeOut",
+        duration: 0.6,
+      },
+    },
+  } as const;
+
 
   return (
     <motion.div
