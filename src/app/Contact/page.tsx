@@ -210,6 +210,23 @@ const ContactPage = () => {
               >
                 GaelMadness
               </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.stmarys-ca.edu/news/la-luna-y-el-sol-la-promesa-de-guadalupe"
+                className="btn btn-success btn-dash"
+              >
+                La Luna y el Sol
+              </a>
+
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.stmarys-ca.edu/news/photo-gallery-meet-saint-marys-2024-faculty-award-winners-and-provosts-faculty-research-grant"
+                className="btn btn-primary btn-dash"
+              >
+                2024 Faculty Awards
+              </a>
             </div>
           </motion.div>
 
