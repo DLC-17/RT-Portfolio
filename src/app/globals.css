@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui"{
-  themes: cyberpunk,  , Black;
+  themes: cyberpunk, Black;
   themes: coffee --default;
  }
 html {
