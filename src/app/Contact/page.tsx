@@ -95,56 +95,33 @@ const ContactPage = () => {
         {/* Right column – Contact Info and Gear */}
         <motion.div
           id="right-column"
-          className="
-            flex flex-col max-w-3xl w-full
-            xl:max-w-4xl
-            2xl:max-w-5xl
-          "
+          className="flex flex-col max-w-2xl w-full"
           variants={itemVariants}
         >
           <motion.h1
-            className="
-              text-3xl lg:text-4xl
-              xl:text-5xl
-              2xl:text-6xl
-              font-bold text-primary mb-2 
-              text-center md:text-left
-            "
+            className="text-2xl sm:text-3xl font-bold text-primary mb-1 text-center md:text-left tracking-tight"
             variants={itemVariants}
           >
             Richard Trinh
           </motion.h1>
 
           <motion.h2
-            className="
-              text-xl 
-              xl:text-2xl
-              2xl:text-3xl
-              text-neutral-600 mb-4 
-              text-center md:text-left
-            "
+            className="text-sm sm:text-base text-neutral-400 mb-3 text-center md:text-left font-medium"
             variants={itemVariants}
           >
             Photographer
           </motion.h2>
 
           <motion.p
-            className="
-              text-lg 
-              xl:text-xl
-              2xl:text-2xl
-              text-neutral-600 mb-6 
-              text-center md:text-left
-              font-semibold
-            "
+            className="text-xs sm:text-sm text-neutral-300 mb-4 text-center md:text-left font-normal leading-relaxed"
             variants={itemVariants}
           >
             Thank you for visiting my photography portfolio! If you have any
             questions, comments, or would like to collaborate, feel free to
-            reach out via email:
+            reach out via email:{" "}
             <a
               href="mailto:rt12@stmarys-ca.edu"
-              className="text-blue-600 hover:underline ml-1"
+              className="text-primary hover:underline font-medium"
               rel="noopener noreferrer"
             >
               rt12@stmarys-ca.edu
@@ -152,44 +129,40 @@ const ContactPage = () => {
           </motion.p>
 
           <motion.div
-            className="
-              flex items-center justify-center md:justify-start space-x-4 mb-6
-              xl:space-x-6
-            "
+            className="flex items-center justify-center md:justify-start space-x-3 mb-5"
             variants={itemVariants}
           >
             <a
               href="https://www.linkedin.com/in/kinhnghiem/"
               target="_blank"
               rel="noopener noreferrer"
+              className="p-2 rounded-full border border-white/40 hover:border-white text-white hover:bg-white/10 transition-all flex items-center justify-center"
+              aria-label="LinkedIn Profile"
             >
-              <LinkedinIcon className="w-6 h-6 xl:w-8 xl:h-8" />
+              <LinkedinIcon className="w-5 h-5 text-white" />
             </a>
-            <a href="mailto:rt12@stmarys-ca.edu" rel="noopener noreferrer">
-              <Mail size={28} className="xl:w-8 xl:h-8" color="black" />
+            <a
+              href="mailto:rt12@stmarys-ca.edu"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full border border-white/40 hover:border-white text-white hover:bg-white/10 transition-all flex items-center justify-center"
+              aria-label="Email Richard Trinh"
+            >
+              <Mail className="w-5 h-5 text-white stroke-white" color="white" strokeWidth={1.8} />
             </a>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <p
-              className="
-                text-neutral-600 mb-2 
-                text-center md:text-left
-                xl:text-2xl
-                2xl:text-2xl
-                font-semibold
-              "
-            >
+            <p className="text-xs sm:text-sm text-neutral-300 mb-2.5 text-center md:text-left font-medium">
               If you enjoyed my work and want to see more, feel free to explore
               some of my other projects:
             </p>
 
-            <div className="flex flex-wrap gap-3 sm:justify-center md:justify-start">
+            <div className="flex flex-wrap gap-2 sm:justify-center md:justify-start">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.stmarys-ca.edu/news/saint-marys-undergraduate-commencement-vibrant-class-2025-charges-future-eyes-forward"
-                className="btn btn-primary btn-dash"
+                className="btn btn-primary btn-dash btn-xs sm:btn-sm text-xs"
               >
                 2025 Commencement
               </a>
@@ -198,7 +171,7 @@ const ContactPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.stmarys-ca.edu/news/2024-professor-year-celebration-jose-feito-reflects-his-saint-marys-journey"
-                className="btn btn-success btn-dash"
+                className="btn btn-success btn-dash btn-xs sm:btn-sm text-xs"
               >
                 Professor of the Year
               </a>
@@ -207,7 +180,7 @@ const ContactPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.stmarys-ca.edu/news/saint-marys-college-takes-center-stage-fall-preview-day"
-                className="btn btn-error btn-dash"
+                className="btn btn-error btn-dash btn-xs sm:btn-sm text-xs"
               >
                 Fall-Preview Day
               </a>
@@ -216,7 +189,7 @@ const ContactPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.stmarys-ca.edu/news/rebuilding-year-more-national-championship-year-smcs-macken-debate-and-speech-team"
-                className="btn btn-info btn-dash"
+                className="btn btn-info btn-dash btn-xs sm:btn-sm text-xs"
               >
                 Debate and Speech
               </a>
@@ -225,7 +198,7 @@ const ContactPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.stmarys-ca.edu/news/lets-talk-march-gaelmadness-saint-marys-athletics-enhances-student-experience-all-year-long"
-                className="btn btn-warning btn-dash"
+                className="btn btn-warning btn-dash btn-xs sm:btn-sm text-xs"
               >
                 GaelMadness
               </a>
@@ -233,7 +206,7 @@ const ContactPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.stmarys-ca.edu/news/la-luna-y-el-sol-la-promesa-de-guadalupe"
-                className="btn btn-success btn-dash"
+                className="btn btn-success btn-dash btn-xs sm:btn-sm text-xs"
               >
                 La Luna y el Sol
               </a>
@@ -242,7 +215,7 @@ const ContactPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.stmarys-ca.edu/news/photo-gallery-meet-saint-marys-2024-faculty-award-winners-and-provosts-faculty-research-grant"
-                className="btn btn-primary btn-dash"
+                className="btn btn-primary btn-dash btn-xs sm:btn-sm text-xs"
               >
                 2024 Faculty Awards
               </a>
@@ -250,22 +223,14 @@ const ContactPage = () => {
           </motion.div>
 
           <motion.h2
-            className="
-              text-xl font-semibold mt-10 mb-4
-              xl:text-2xl
-              2xl:text-3xl
-            "
+            className="text-sm sm:text-base font-semibold mt-6 mb-2 text-white text-center md:text-left"
             variants={itemVariants}
           >
             My Camera Gear:
           </motion.h2>
 
           <motion.ul
-            className="
-              list-disc list-inside text-info space-y-2
-              xl:text-lg
-              2xl:text-xl
-            "
+            className="list-disc list-inside text-info/90 space-y-1 text-xs sm:text-sm text-center md:text-left"
             variants={itemVariants}
           >
             <li>Canon 6D</li>

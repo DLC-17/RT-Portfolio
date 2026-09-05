@@ -1,5 +1,8 @@
+"use client";
+
 import { House, Images, Mail } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 
 interface ContentLayoutProps {
@@ -7,85 +10,69 @@ interface ContentLayoutProps {
 }
 
 const ContentLayout = ({ children }: ContentLayoutProps) => {
-  return (
-    <div className="flex w-full min-h-screen">
-      {/* Navigation */}
-      <nav
-        className="
-          fixed top-0 left-0 w-full h-16 
-          md:h-full md:w-64 
-          xl:w-72 
-          2xl:w-80 
-          z-50 flex bg-base-100 
-          md:flex-col items-center md:items-start 
-          justify-center md:justify-start 
-          px-4 py-2 
-          shadow-md
-        "
-      >
-        <h2
-          className="
-            text-base md:text-lg 
-            xl:text-xl 
-            2xl:text-2xl
-            font-bold mb-0 md:mb-4 mt-0 md:mt-6 
-            w-full text-center md:text-left
-          "
-        >
-          Richard Trinh
-        </h2>
-        <ul
-          className="
-            flex md:flex-col gap-4 md:gap-2 
-            xl:gap-4 
-            2xl:gap-6
-            ml-4 md:ml-0 mt-0 md:mt-4
-          "
-        >
-          <li>
-            <Link
-              href="/"
-              className="
-                hover:underline flex items-center gap-2 
-                py-3 
-                xl:py-4 
-                2xl:py-5
-              "
-            >
-              <House className="xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" /> Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Gallery"
-              className="
-                hover:underline flex items-center gap-2 
-                py-3 
-                xl:py-4 
-                2xl:py-5
-              "
-            >
-              <Images className="xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" /> Gallery
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Contact"
-              className="
-                hover:underline flex items-center gap-2 
-                py-3 
-                xl:py-4 
-                2xl:py-5
-              "
-            >
-              <Mail className="xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" /> Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
+  const pathname = usePathname();
 
-      {/* Main content with responsive margin */}
-      <main className="bg-base glass flex flex-1 pt-16 md:pt-0 md:ml-64 xl:ml-72 2xl:ml-80 px-4 py-6">
+  return (
+    <div className="min-h-screen w-full bg-neutral-950 text-white flex flex-col relative selection:bg-primary selection:text-black">
+      {/* Sticky Top Navigation matching homescreen style */}
+      <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-black/50 border-b border-white/10 px-4 sm:px-8 py-3.5 sm:py-4 flex items-center justify-between shadow-lg">
+        <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group">
+          <span className="font-extrabold text-lg sm:text-2xl tracking-tight text-white group-hover:text-primary transition-colors">
+            Richard Trinh
+          </span>
+          <span className="hidden sm:inline text-sm sm:text-base text-neutral-400 font-medium">
+            Photography
+          </span>
+        </Link>
+
+        {/* Homescreen-style navigation pill */}
+        <nav>
+          <ul className="flex items-center gap-1 sm:gap-2 bg-white/10 backdrop-blur-md p-1.5 sm:p-2 rounded-full border border-white/15 shadow-inner text-sm sm:text-base font-semibold">
+            <li>
+              <Link
+                href="/"
+                className={`flex items-center gap-1.5 sm:gap-2 py-1.5 px-3 sm:px-4 rounded-full transition-all ${
+                  pathname === "/"
+                    ? "bg-white/20 text-white shadow-sm"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                <House className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Home</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Gallery"
+                className={`flex items-center gap-1.5 sm:gap-2 py-1.5 px-3 sm:px-4 rounded-full transition-all ${
+                  pathname === "/Gallery"
+                    ? "bg-primary text-black font-bold shadow-sm"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                <Images className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Gallery</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Contact"
+                className={`flex items-center gap-1.5 sm:gap-2 py-1.5 px-3 sm:px-4 rounded-full transition-all ${
+                  pathname === "/Contact"
+                    ? "bg-primary text-black font-bold shadow-sm"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                }`}
+              >
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Contact</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Main content area */}
+      <main className="flex-1 w-full flex flex-col">
         {children}
       </main>
     </div>
@@ -93,4 +80,5 @@ const ContentLayout = ({ children }: ContentLayoutProps) => {
 };
 
 export default ContentLayout;
+
 
