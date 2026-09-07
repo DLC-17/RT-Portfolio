@@ -46,5 +46,3 @@ Open http://localhost:3000 in your browser to view the portfolio.
 
 📫 Contact
 Questions or feedback? Reach out at dlc17@stmarys-ca.edu or connect on [LinkedIn](https://www.linkedin.com/in/david-coleman17/).
-
-Thanks for checking out my React Photography Portfolio!
