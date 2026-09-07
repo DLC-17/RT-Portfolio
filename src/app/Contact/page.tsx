@@ -120,11 +120,11 @@ const ContactPage = () => {
             questions, comments, or would like to collaborate, feel free to
             reach out via email:{" "}
             <a
-              href="mailto:rt12@stmarys-ca.edu"
+              href="mailto:rtrinh@alumni.stmarys-ca.edu"
               className="text-primary hover:underline font-medium"
               rel="noopener noreferrer"
             >
-              rt12@stmarys-ca.edu
+              rtrinh@alumni.stmarys-ca.edu
             </a>
           </motion.p>
 
